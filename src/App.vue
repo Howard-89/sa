@@ -23,11 +23,14 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <li class="nav-item mr-3" >
-                <a class="btn btn-outline-primary" href="login.html" role="button">登入</a>
-              </li>
-              <li class="nav-item">
-                <a class="btn btn-outline-primary" href="signin.html" role="button">註冊</a>
-              </li>
+              <a class="btn btn-outline-primary" role="button" v-show="!login">登入</a>
+            </li>
+            <li class="nav-item mr-3" >
+              <a class="btn btn-outline-primary" role="button" v-show="login" @click="logout ">登出</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" role="button">註冊</a>
+            </li>
           </form>
         </div>
       </nav>
@@ -57,3 +60,34 @@
   }
 }
 </style>
+<script>
+import {db} from './db'
+import $ from 'jquery'
+export default {
+  created(){
+    db.auth().onAuthStateChanged(user=>{
+      if(user){
+        this.login = true
+      }
+      else{
+        this.login = false
+      }
+    })
+  },
+  data(){
+    return{
+      login: false
+    }
+  },
+  methods: {
+    closemenu(){
+      $('navbarTogglerDemo02').collapse('hide')
+    },
+    logout(){
+      db.auth().signOut()
+      $('navbarTogglerDemo02').collapse('hide')
+      alert("您已成功登出!!")
+    }
+  }
+}
+</script>
