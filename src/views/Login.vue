@@ -30,7 +30,7 @@
                     </div>
                   </div>
                   <button  class="btn btn-danger mx-auto mt-4" style="display: block" @click="login">登入</button>
-                  <h3 class="text-center mt-4 mb-4" style="font-size: 13px;">還不是會員？請快點<a href="signin.html" style="color: red;">註冊</a>吧！</h3>
+                  <h3 class="text-center mt-4 mb-4" style="font-size: 13px;">還不是會員？請快點<router-link style="color: red;" to="/signin">註冊</router-link>吧！</h3>
                 </div>
             </div>
         </div>

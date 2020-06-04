@@ -9,27 +9,25 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active mr-5">
-              <router-link  class="nav-link" to="/" >首頁</router-link>
+              <router-link  class="nav-link" to="/" @click.native="closeMenu()">首頁</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closemenu()">我要捐贈</router-link>
+              <router-link class="nav-link" to="/about" @click.native="closeMenu()">我要捐贈</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closemenu()">公益單位合作</router-link>
+              <router-link class="nav-link" to="/about" @click.native="closeMenu()">公益單位合作</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closemenu()">我要捐款</router-link>
+              <router-link class="nav-link" to="/about" @click.native="closeMenu()">我要捐款</router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <li class="nav-item mr-3" >
               <router-link class="btn btn-outline-primary" role="button" v-show="!login" to="/login">登入</router-link>
-            </li>
-            <li class="nav-item mr-3" >
-              <a class="btn btn-outline-primary" role="button" v-show="login" @click="logout">登出</a>
+              <a class="btn btn-outline-primary" role="button" v-show="login" @click="logout"><font color="green">登出</font></a>
             </li>
             <li class="nav-item">
-              <router-link class="btn btn-outline-primary" role="button" v-show="!login" to="/about">註冊</router-link>
+              <router-link class="btn btn-outline-primary" role="button" v-show="!login" to="/signin">註冊</router-link>
             </li>
           </form>
         </div>
@@ -80,12 +78,12 @@ export default {
     }
   },
   methods: {
-    closemenu(){
-      $('navbarTogglerDemo02').collapse('hide')
+    closeMenu(){
+      $('#navbarTogglerDemo02').collapse('hide')
     },
     logout(){
       db.auth().signOut()
-      $('navbarTogglerDemo02').collapse('hide')
+      $('#navbarTogglerDemo02').collapse('hide')
       alert("您已成功登出!!")
     }
   }
