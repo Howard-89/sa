@@ -1,0 +1,266 @@
+<template>
+    <div id="donate">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3">
+
+                    <h1 class="my-4">捐贈物資分類</h1>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">家電機器</a>
+                        <a href="#" class="list-group-item">生活用品</a>
+                        <a href="#" class="list-group-item">服飾配件</a>
+                        <a href="#" class="list-group-item">居家擺設</a>
+                        <a href="#" class="list-group-item">毛小孩用品</a>
+                        <a href="#" class="list-group-item">文具用品</a>
+                    </div>
+
+                </div>
+                <!-- /.col-lg-3 -->
+
+                <div class="col-lg-9">
+
+                    <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slidet-to="2"></li>
+                        </ol>
+                        <div class="car-bull ">&#11088;重點物資需求</div>
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active">
+                                <div class="car-banner"><img src="img/b1.jpg" alt="">
+                                    <h2>電冰箱</h2>
+                                    <p>新北市慈芳關懷中心</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 7</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b2.jpeg" alt="">
+                                    <h2>電視螢幕</h2>
+                                    <p>愛閱坊身心障礙工廠</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 3</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b3.jpg" alt="">
+                                    <h2>延長線</h2>
+                                    <p>好牧人關顧守望協會</p>
+                                    <p class="eager">&#128293; 目前尚缺數量 : 4</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="car-banner"><img src="img/b1.jpg" alt="">
+                                    <h2>電冰箱</h2>
+                                    <p>新北市慈芳關懷中心</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 7</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b2.jpeg" alt="">
+                                    <h2>電視螢幕</h2>
+                                    <p>愛閱坊身心障礙工廠</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 3</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b3.jpg" alt="">
+                                    <h2>延長線</h2>
+                                    <p>好牧人關顧守望協會</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 4</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="car-banner"><img src="img/b1.jpg" alt="">
+                                    <h2>電冰箱</h2>
+                                    <p>新北市慈芳關懷中心</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 7</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b2.jpeg" alt="">
+                                    <h2>電視螢幕</h2>
+                                    <p>愛閱坊身心障礙工廠</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 3</p>
+                                </div>
+                                <div class="car-banner"><img src="img/b3.jpg" alt="">
+                                    <h2>延長線</h2>
+                                    <p>好牧人關顧守望協會</p>
+                                    <p class="eager">&#128293;目前尚缺數量 : 4</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev"
+                            style="background-color: rgb(160, 163, 165); width: 50px; height: 100px;margin-top:130px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next"
+                            style="background-color: rgb(160, 163, 165); width: 50px; height: 100px;margin-top:130px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <div class="row my-4">
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/1.jpg" alt="" style="width: 250px;"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="fan.html">立式風扇</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">5台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因夏天到來，酷熱的天氣容易影響學童們上課的專心度，故需要在教室內放置電風扇。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人博幼社會福利基金會</p>
+                                </div>
+
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9733; &#9734; &#9734; &#9734;</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/2.jpeg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">腳踏車</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">7台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因偏鄉學童，部分居住的地區犁學區較遠，為節省學童通勤時間，希望可募集自行車。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人勵馨社會福利基金會</p>
+                                </div>
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9734; &#9734; &#9734; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/3.jpg" alt="" style="width: 250px;"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">洗衣機</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">3台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因偏鄉學童，部分居住的地區犁學區較遠，為節省學童通勤時間，希望可募集自行車。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人勵馨社會福利基金會</p>
+                                </div>
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/4.jpg" alt="" style="width: 250px;"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">捕蚊燈</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">2台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因偏鄉學童，部分居住的地區犁學區較遠，為節省學童通勤時間，希望可募集自行車。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人勵馨社會福利基金會</p>
+                                </div>
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9733; &#9734; &#9734; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/5.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">冷氣機</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">5台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因偏鄉學童，部分居住的地區犁學區較遠，為節省學童通勤時間，希望可募集自行車。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人勵馨社會福利基金會</p>
+                                </div>
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9733; &#9734; &#9734; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="img/6.jpg" alt="" style="width: 250px;"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">電鍋</a>
+                                    </h4>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">1台</span></h5>
+                                    <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
+                                    <p class="card-text mt-3" style="line-height: 25px;">
+                                        因偏鄉學童，部分居住的地區犁學區較遠，為節省學童通勤時間，希望可募集自行車。</p>
+                                    <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
+                                    <p class="mt-3">財團法人勵馨社會福利基金會</p>
+                                </div>
+                                <div class="card-footer mt-3">
+                                    <small class="text-muted">迫切度 &#9733; &#9733; &#9733; &#9734; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.col-lg-9 -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <div class="footer">
+        <div class="row" >
+            <div class="col-sm-4 mb-4" style="color:white">
+                <div class="tel mt-5 mb-4 ml-5">友站連結：</div>
+                <div class="adr mb-4  ml-5"><a href="http://igoods.tw/Index/Index.aspx">igoods愛物資</a></div>
+               <div class="mail mb-4  ml-5"> <a href="https://www.eden.org.tw/">伊甸社福基金會</a></div>
+               <div class="time mb-4  ml-5"><a href="http://www.fhl.org.tw/">信望愛智譨發展中心</a></div>
+            </div>
+            <div class="col-sm-4 mb-4">
+               <form action="" >
+                 <h3 style="color:white;" class="mt-5 mb-4 ml-5">訂閱我們鎖定最新消息</h3>
+                 <div class="form-group">
+                  <input type="text" class="form-control mt-3 mb-4 ml-5" style="width: 200px;" id="inputAddress" placeholder="請輸入email">
+                  <button type="submit" class="btn btn-warning mt-4 mb-4 ml-5" style="display: block">訂閱</button>
+                </div>
+               </form>
+
+            </div>
+            <div class="col-sm-4 mb-4" style="color:white">
+                <div class="tel mt-5 mb-4 ml-5">服務專線：(02)-29977909</div>
+                <div class="adr mb-4 ml-5">地址：台北市大安區民正路120號</div>
+               <div class="mail mb-4 ml-5">信箱：ilovedonation@gmail.com</div>
+               <div class="time mb-4 ml-5">營業時間：週一～週五 上午9:00~下午5:30</div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</template>
+<script>
+    export default {
+
+    }
+</script>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand mr-5" href="#">舊愛贈</a>
+      <router-link  class="navbar-brand mr-5" to="/" @click.native="closeMenu()">舊愛贈</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,13 +12,13 @@
               <router-link  class="nav-link" to="/" @click.native="closeMenu()">首頁</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closeMenu()">我要捐贈</router-link>
+              <router-link class="nav-link" to="/donate" @click.native="closeMenu()">我要捐贈</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closeMenu()">公益單位合作</router-link>
+              <router-link class="nav-link" to="/public" @click.native="closeMenu()">公益單位合作</router-link>
             </li>
             <li class="nav-item mr-5">
-              <router-link class="nav-link" to="/about" @click.native="closeMenu()">我要捐款</router-link>
+              <router-link class="nav-link" to="/donation" @click.native="closeMenu()">我要捐款</router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
