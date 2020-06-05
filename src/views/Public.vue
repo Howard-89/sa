@@ -95,12 +95,13 @@
         methods:{
             enter(){
                 const fdb = db.firestore()
+                let num = parseInt(this.number, 10)
                 fdb.collection('Supplies').doc().set({
                     name: this.name,
                     cate: this.cate,
                     purpose: this.purpose,
                     unit: this.unit,
-                    number: this.number,
+                    number: num,
                     state: this.state,
                     note: this.note
                 }).then(()=>{

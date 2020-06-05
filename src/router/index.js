@@ -7,6 +7,7 @@ import Signin from '../views/Signin.vue'
 import Donate from '../views/Donate.vue'
 import Public from '../views/Public.vue'
 import Donation from '../views/Donation.vue'
+import Products from '../views/Products.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ Vue.use(VueRouter)
     name: 'Donation',
     component: Donation,
     meta: {requiresAuth: true}
+  },
+  {
+    path: '/products/:id',
+    name: 'Products',
+    component: Products,
   }
 ]
 

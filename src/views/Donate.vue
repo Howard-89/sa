@@ -26,7 +26,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="fan.html">{{product.name}}</a>
+                                        <a href="" @click="change(product.name)">{{product.name}}</a>
                                     </h4>
                                     <h5>需求數量：<span style="color: crimson; font-size: 20px;">{{product.number}}</span></h5>
                                     <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
@@ -90,6 +90,11 @@
             let products = fstore.collection('Supplies')
             return{
                 products
+            }
+        },
+        methods:{
+            change(name){
+                this.$router.push(`/products/${name}`)
             }
         }
     }
