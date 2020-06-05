@@ -28,11 +28,11 @@
                                     <h4 class="card-title">
                                         <a href="fan.html">{{product.name}}</a>
                                     </h4>
-                                    <!-- <h5>需求數量：<span style="color: crimson; font-size: 20px;">{{product.number}}</span></h5>
+                                    <h5>需求數量：<span style="color: crimson; font-size: 20px;">{{product.number}}</span></h5>
                                     <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
                                     <p class="card-text mt-3" style="line-height: 25px;">{{product.purpose}}</p>
                                     <h4 class="mt-3" style="color: coral;">需求單位 :</h4>
-                                    <p class="mt-3">{{product.unit}}</p> -->
+                                    <p class="mt-3">{{product.unit}}</p>
                                 </div>
                             </div>
 
