@@ -8,44 +8,34 @@
                 </div>
                 <div class="form-row px-3 pt-3">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4" class="mb-2">公益單位名稱</label>
-                        <input type="email" class="form-control" id="inputEmail4">
+                        <label class="mb-2">公益單位名稱</label>
+                        <input type="text" class="form-control" v-model="unit">
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4" class="mb-2">聯絡資訊</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                        <label class="mb-2">類別</label>
+                        <input type="text" class="form-control" v-model="cate">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4" class="mb-2">愛心碼</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                        <label class="mb-2">品名</label>
+                        <input type="text" class="form-control" v-model="name">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4" class="mb-2">統一編號</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                       <label class="mb-2">需求數量</label>
+                        <input type="number" class="form-control" min="1" max="200" v-model="number">
                     </div>
                 </div>
                 <div class="form-group px-3">
-                    <label for="inputAddress2" class="mb-2">單位地址</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="台北市大安區民正路120號">
+                    <label class="mb-2">需求狀態</label>
+                    <input type="text" class="form-control" v-model="state">
                 </div>
                 <div class="form-group px-3">
-                    <label for="inputAddress" class="mb-2">信箱</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="ilovedonation@gmail.com">
-                </div>
-
-
-                <div class="form-group px-3">
-                    <label for="inputAddress" class="mb-2">需求物資名稱</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <label class="mb-2">需求目的</label>
+                    <textarea class="form-control" cols="30" rows="5" v-model="purpose"></textarea>
                 </div>
                 <div class="form-group px-3">
-                    <label for="inputAddress" class="mb-2">數量</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="上限200">
-                </div>
-                <div class="custom-file mx-3 my-3" style="width: 690px;">
-                    <label class="custom-file-label" for="customFile">選擇照片</label>
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="mb-2">備註</label>
+                    <textarea class="form-control" cols="30" rows="5" v-model="note"></textarea>
                 </div>
                 <div class="form-group" style="font-size: 13px;">
                     <div class="form-check text-center">
@@ -56,7 +46,7 @@
                         </label>
                     </div>
                 </div>
-                <button class="btn btn-danger mx-auto mb-3" style="display: block">確認送出</button>
+                <button class="btn btn-danger mx-auto mb-3" style="display: block" @click="enter">確認送出</button>
             </div>
         </div>
          <div class="footer">
@@ -89,7 +79,35 @@
 </template>
 
 <script>
+    import {db} from '../db'
     export default {
+        data(){
+            return{
+                unit:'',
+                cate:'',
+                purpose:'',
+                name:'',
+                number:'',
+                state:'',
+                note:''
+            }
+        },
+        methods:{
+            enter(){
+                const fdb = db.firestore()
+                fdb.collection('Supplies').doc().set({
+                    name: this.name,
+                    cate: this.cate,
+                    purpose: this.purpose,
+                    unit: this.unit,
+                    number: this.number,
+                    state: this.state,
+                    note: this.note
+                }).then(()=>{
+                    this.$router.replace({name: "Donate"})
+                })
+            }
+        }
 
     }
 </script>

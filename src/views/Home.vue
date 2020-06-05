@@ -9,17 +9,26 @@
       <div class="main mb-5">
         <div class="card-deck clearfix" style="margin-left: 20px;margin-right: 20px;">
             <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img src="img/img1.jpg" class="card-img-top" style="height:350px ; width:100%;">
+              <img src="../assets/img1.jpg" class="card-img-top" style="height:350px ; width:100%;">
               <div class="card-body ">
                 <p class="card-text mb-4" style="line-height: 40px;">以往你捐贈的舊物，不一定符合別人的需求，有時會造成物資的浪費，但在這邊你可以看到各個公益單位所需要的物資，並且你可以按照各單位的需求，捐贈他們適合的物資，讓愛心可以被最大化</p>
-                <a href="donate.html"><button type="button" class="btn btn-danger btn-lg btn-block">我要捐贈</button></a>
+                <router-link class="btn btn-danger btn-lg btn-block" to="/donate">我要捐贈</router-link>
               </div>
             </div>
             <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img src="img/img2.jpg" class="card-img-top" style="height:350px ; width:100%;">
+              <img src="../assets/img2.jpg" class="card-img-top" style="height:350px ; width:100%;">
               <div class="card-body">
                 <p class="card-text mb-4" style="line-height: 40px;" >如果您的公益單位需要任何物資，歡迎跟我們聯絡，我們會盡最大的努力，幫您募集到您需要的物資，這是本平台最大的宗旨與期望，希望所有舊物都能被妥善利用，讓愛心傳遞下去</p>
-                <a href="public.html"><button type="button" class="btn btn-danger btn-lg btn-block">公益合作</button></a>
+                <router-link class="btn btn-danger btn-lg btn-block" to="/public">公益合作</router-link>
+              </div>
+            </div>
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+              <img src="../assets/img3.jpg" style="height:350px ; width:100%;" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text mb-4" style="line-height: 40px;">
+                   因為我們不一定所有的物資募集都能夠成功完成任務，這時候就需要您大大的愛心，無論是直接捐贈金錢，或是直接捐贈新物，我們都歡迎您，讓需要幫助的公益單位都能得到幫助
+                </p>
+                <router-link class="btn btn-danger btn-lg btn-block" to="/donation">我要捐款</router-link>
               </div>
             </div>
           </div>
