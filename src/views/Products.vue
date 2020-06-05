@@ -5,7 +5,7 @@
                 <div class="card-header" style="background-color: orange">
                     詳細內容
                 </div>
-                <div class="card-body" align="center">
+                <div class="card-body" align="center" style="line-height:50px">
                     <table v-for="(product, idx) in products" :key="idx">
                         <tr>
                             <td>需求單位 : </td>
@@ -36,7 +36,7 @@
                             <td>{{product.note}}</td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button class="btn btn-danger mx-auto my-4" style="display: block">前往捐贈</button></td>
+                           <div class="col-6 mb-5">  <router-link to="/Confirm"  class="btn btn-danger mt-2" style="display: block ; width:100px">查看</router-link></div>
                         </tr>
                     </table>
                 </div>

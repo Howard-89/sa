@@ -9,7 +9,8 @@ import Public from '../views/Public.vue'
 import Donation from '../views/Donation.vue'
 import Products from '../views/Products.vue'
 import Profile from '../views/Profile.vue'
-
+import History from '../views/History.vue'
+import Confirm from '../views/Confirm.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -54,6 +55,18 @@ Vue.use(VueRouter)
     path: '/profile',
     name: 'Profile',
     component: Profile,
+    meta: {requiresAuth: true}
+  },
+  {
+    path: '/history',
+    name: 'History',
+    component:History,
+    meta: {requiresAuth: true}
+  },
+  {
+    path: '/confirm',
+    name: 'Confirm',
+    component:Confirm,
     meta: {requiresAuth: true}
   }
 ]
