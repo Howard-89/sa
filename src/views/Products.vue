@@ -1,44 +1,44 @@
 <template>
     <div id="products">
         <div class="main py-5" style="background-color: rgb(246, 233, 205);">
-            <div class="row">
-                <div class="col-sm-6 p-3">
-                    <div class="border border-dark shadow  mb-5 bg-white rounded mr-5">
-                        <div class="form-row mx-0"
-                            style="background-color: orange  ;  width: 100%; height: 50px ;color:black;">
-                            <div class="mt-3 mx-auto" style="font-size: 20px;">詳細內容</div>
-                        </div>
-                        <table v-for="(product, idx) in products" :key="idx">
-                            <tr>
-                                <td>需求單位 : </td>
-                                <td>{{product.unit}}</td>
-                            </tr>
-                            <tr>
-                                <td>類別 : </td>
-                                <td>{{product.cate}}</td>
-                            </tr>
-                            <tr>
-                                <td>品名 : </td>
-                                <td>{{product.name}}</td>
-                            </tr>
-                            <tr>
-                                <td>需求數量 : </td>
-                                <td>{{product.number}}</td>
-                            </tr>
-                            <tr>
-                                <td>狀態 : </td>
-                                <td>{{product.state}}</td>
-                            </tr>
-                            <tr>
-                                <td>需求目的 : </td>
-                                <td>{{product.purpose}}</td>
-                            </tr>
-                            <tr>
-                                <td>備註 : </td>
-                                <td>{{product.note}}</td>
-                            </tr>
-                        </table>
-                    </div>
+            <div class="card" style="width: 800px;">
+                <div class="card-header" style="background-color: orange">
+                    詳細內容
+                </div>
+                <div class="card-body" align="center">
+                    <table v-for="(product, idx) in products" :key="idx">
+                        <tr>
+                            <td>需求單位 : </td>
+                            <td>{{product.unit}}</td>
+                        </tr>
+                        <tr>
+                            <td>類別 : </td>
+                            <td>{{product.cate}}</td>
+                        </tr>
+                        <tr>
+                            <td>品名 : </td>
+                            <td>{{product.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>需求數量 : </td>
+                            <td>{{product.number}}</td>
+                        </tr>
+                        <tr>
+                            <td>狀態 : </td>
+                            <td>{{product.state}}</td>
+                        </tr>
+                        <tr>
+                            <td>需求目的 : </td>
+                            <td>{{product.purpose}}</td>
+                        </tr>
+                        <tr>
+                            <td>備註 : </td>
+                            <td>{{product.note}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button class="btn btn-danger mx-auto my-4" style="display: block">前往捐贈</button></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -75,19 +75,21 @@
 </template>
 
 <script>
-    import {db} from '../db'
+    import {
+        db
+    } from '../db'
     const fstore = db.firestore()
     export default {
         data() {
             let id = this.$route.params.id
             return {
-                products:[],
+                products: [],
                 id
             }
         },
-        firestore(){
+        firestore() {
             let products = fstore.collection('Supplies').where("name", "==", this.id)
-            return{
+            return {
                 products
             }
         }
