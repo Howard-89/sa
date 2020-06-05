@@ -1,7 +1,7 @@
 <template>
     <div id="products">
         <div class="main py-5" style="background-color: rgb(246, 233, 205);">
-            <div class="card" style="width: 800px;">
+            <div class="card" style="width: 800px;margin:0 auto;">
                 <div class="card-header" style="background-color: orange">
                     詳細內容
                 </div>
@@ -97,6 +97,6 @@
     }
 </script>
 
-<style>
+<style lang="css" scoped>
 
 </style>

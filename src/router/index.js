@@ -8,6 +8,7 @@ import Donate from '../views/Donate.vue'
 import Public from '../views/Public.vue'
 import Donation from '../views/Donation.vue'
 import Products from '../views/Products.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,12 @@ Vue.use(VueRouter)
     path: '/products/:id',
     name: 'Products',
     component: Products,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+    meta: {requiresAuth: true}
   }
 ]
 

@@ -20,6 +20,9 @@
             <li class="nav-item mr-5">
               <router-link class="nav-link" to="/donation" @click.native="closeMenu()">我要捐款</router-link>
             </li>
+            <li class="nav-item mr-5">
+              <router-link class="nav-link" to="/profile" @click.native="closeMenu()">我的資訊</router-link>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <li class="nav-item mr-3" >
