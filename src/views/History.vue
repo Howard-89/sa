@@ -9,15 +9,17 @@
   
             <img src="../assets/history1.png" class="card-img-top" style="width:150px; height: 150px ;">
             <hr>
-            <div class="row" style="text-align:left;line-height:70px;">
+            <div class="row" style="text-align:left;line-height:70px;" >
                 <div class="col-3 mt-5" ></div>
                 <div class="col-3"> <div class="name"><img src="../assets/donate.png" style="width:18px; height: 18px ;" class="mr-2">捐贈紀錄</div> </div>
-                <div class="col-6 mb-5">
-                曾於2019.8.28捐贈1台電冰箱給慈祐基金會
-                <br>
-                曾於2019.8.28捐贈1台電冰箱給慈祐基金會
-                 <br>
-                曾於2019.8.28捐贈1台電冰箱給慈祐基金會
+                <div class="col-6 mb-5" >
+                    <table v-for="(history, idx) in historys" :key="idx">
+                        <tr>
+                            <td> {{history.name}}於{{history.time}}捐贈{{history.supplies}}*{{history.number}}給{{history.unit}}</td>
+                        </tr>
+                    </table>
+                  
+                
                 </div>
               
          
@@ -46,9 +48,25 @@
 </template>
 
 <script>
-export default {
+import {
+        db
+    } from '../db'
+    const fstore = db.firestore()
+    export default {
+        data() {
+            return {
+                historys: [],
+                
+            }
+        },
+        firestore() {
+            let historys = fstore.collection('History')
+            return {
+                historys
+            }
+        }
 
-}
+    }
 </script>
 
 <style>

@@ -22,6 +22,9 @@
             </li>
             <li class="nav-item mr-5">
               <router-link class="nav-link" to="/profile" @click.native="closeMenu()">我的資訊</router-link>
+            </li> 
+            <li class="nav-item mr-5">
+              <router-link class="nav-link" to="/History" @click.native="closeMenu()">歷史紀錄</router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
