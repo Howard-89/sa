@@ -50,6 +50,7 @@ Vue.use(VueRouter)
     path: '/products/:id',
     name: 'Products',
     component: Products,
+    
   },
   {
     path: '/profile',

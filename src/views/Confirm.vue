@@ -28,7 +28,7 @@
              
             </div>
             <div class="form-group px-3">
-                    <label for="inputInformation" class="mb-2">物資資訊確認</label>
+                    <label for="inputInformation" class="mb-2">個人資訊確認</label>
                 </div>
                  <div class="row" style="text-align:left;line-height:70px;" v-for="(product, idx) in products" :key="idx" >
                 <div class="col-3 mt-5" ></div>
@@ -62,10 +62,7 @@
                     <label for="inputAmount" class="mb-2">捐贈數量</label>
                     <input type="text" class="form-control mx-auto" style="width:700px">
                 </div>
-                <div class="form-group px-3">
-                    <label for="inputAmount" class="mb-2">捐贈時間</label>
-                    <input type="text" class="form-control mx-auto" style="width:700px">
-                </div>
+                
 
                 
 
@@ -102,20 +99,14 @@
 </template>
 
 <script>
-    import {
-        db
-    } from '../db'
+    import { db } from '../db'
     const fstore = db.firestore()
     export default {
         data() {
-            let id = this.$route.params.id
-            let Customer = db.auth().currentUser;
-            let uid;
-            if( Customer !=null){
-                uid=Customer.uid;
-
-                }  
-            return {
+            let id = this.$route.params.id;
+            let currentUser = db.auth().currentUser;
+            let uid = ( currentUser !== undefined) ? currentUser.uid : '';
+            return {   
                 products: [],
                 id,
                 users:[],
@@ -124,9 +115,8 @@
                      
         },
         firestore() {
-            let products = fstore.collection('Supplies').where("name", "==", this.id)
-            let users = fstore.collection('Customer').where('uid', '==', this.uid);
-           users 
+            let products = fstore.collection('Supplies').where("name", "==", this.id);
+            let users = fstore.collection('Customer').where("uid", "==", this.uid);
         
             return {
                 products,
