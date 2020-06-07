@@ -36,8 +36,10 @@
                             <td>{{product.note}}</td>
                         </tr>
                         <tr>
-                           <div class="col-6 mb-5">  <router-link to="/Confirm"  class="btn btn-danger mt-2" style="display: block ; width:100px">查看</router-link></div>
+                           
+                           <a href="" @click="change(product.name)">前往捐贈</a>
                         </tr>
+
                     </table>
                 </div>
             </div>
@@ -91,6 +93,11 @@
             let products = fstore.collection('Supplies').where("name", "==", this.id)
             return {
                 products
+            }
+        },
+        methods:{
+            change(name){
+                this.$router.push(`/confirm/${name}`)
             }
         }
 
