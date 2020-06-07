@@ -9,7 +9,7 @@
   
             <img src="../assets/user.png" class="card-img-top" style="width:150px; height: 150px ;">
             <hr>
-            <div class="row" style="text-align:left;line-height:70px;" v-for="(user, idx) in users" :key="idx">
+            <div class="row" style="text-align:left;line-height:70px;" v-for="(user, idx) in users" :key="idx" >
                 <div class="col-3 mt-5" ></div>
                 <div class="col-3"> <div class="name"><img src="../assets/name.png" style="width:18px; height: 18px ;" class="mr-2">姓名</div> </div>
                 <div class="col-6">{{user.name}}</div>
@@ -53,8 +53,12 @@ import { db } from '../db'
 const fstore = db.firestore()
 export default {
     data(){
-    let currentUser = db.auth().currentUser;
-    let uid = ( currentUser !== undefined) ? currentUser.uid : '';
+    let Customer = db.auth().currentUser;
+    let uid;
+    if( Customer !=null){
+        uid=Customer.uid;
+
+    }
     return{
       users:[],
       uid
@@ -63,9 +67,9 @@ export default {
   firestore() {
         let users = fstore.collection('Customer').where('uid', '==', this.uid);
         return{
-            users,
+           users 
         }
-        //  'z3LeOviIgxOV626HhKwNQlwEivI3'
+        
          
     }
 }
