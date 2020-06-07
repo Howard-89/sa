@@ -9,19 +9,19 @@
   
             <img src="../assets/user.png" class="card-img-top" style="width:150px; height: 150px ;">
             <hr>
-            <div class="row" style="text-align:left;line-height:70px;">
+            <div class="row" style="text-align:left;line-height:70px;" v-for="(user, idx) in users" :key="idx">
                 <div class="col-3 mt-5" ></div>
                 <div class="col-3"> <div class="name"><img src="../assets/name.png" style="width:18px; height: 18px ;" class="mr-2">姓名</div> </div>
-                <div class="col-6">Collin</div>
+                <div class="col-6">{{user.name}}</div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="email"><img src="../assets/email.png" style="width:18px; height: 18px ;" class="mr-2"><span >信箱</span></div> </div>
-                <div class="col-6">collin0825@gmail.com</div>
+                <div class="col-6">{{user.email}}</div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="address"><img src="../assets/address.png" style="width:18px; height: 18px ;" class="mr-2"><span >地址</span></div> </div>
-                <div class="col-6">新北市明智路120號</div>
+                <div class="col-6">{{user.address}}</div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="phone"><img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2"><span >手機</span></div> </div>
-                <div class="col-6">0905037286</div>
+                <div class="col-6">{{user.phone}}</div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改密碼</span></div> </div>
                 <div class="col-6">  <button  class="btn btn-primary mt-2" style="display: block">送出審核信</button></div>
@@ -49,8 +49,25 @@
 </template>
 
 <script>
+import { db } from '../db'
+const fstore = db.firestore()
 export default {
-
+    data(){
+    let currentUser = db.auth().currentUser;
+    let uid = ( currentUser !== undefined) ? currentUser.uid : '';
+    return{
+      users:[],
+      uid
+    }
+  },
+  firestore() {
+        let users = fstore.collection('Customer').where('uid', '==', this.uid);
+        return{
+            users,
+        }
+        //  'z3LeOviIgxOV626HhKwNQlwEivI3'
+         
+    }
 }
 </script>
 

@@ -105,7 +105,8 @@ export default {
                             phone: this.phone,
                             password: this.pw,
                             address: this.address,
-                            audit: false
+                            audit: false,
+                            uid: user.uid
                         }).then(()=>{
                             alert("註冊成功!!")
                             this.$router.replace({name: "Login"})
