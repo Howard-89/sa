@@ -53,12 +53,8 @@ import { db } from '../db'
 const fstore = db.firestore()
 export default {
     data(){
-    let Customer = db.auth().currentUser;
-    let uid;
-    if( Customer !=null){
-        uid=Customer.uid;
-
-    }
+    let currentUser = db.auth().currentUser;
+    let uid = ( currentUser !== undefined) ? currentUser.uid : '';
     return{
       users:[],
       uid

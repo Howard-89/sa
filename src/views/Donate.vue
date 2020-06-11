@@ -26,7 +26,9 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="" @click="change(product.name)">{{product.name}}</a>
+                                        
+                                        
+                                        <button type="submit" class="btn btn-warning mt-4 mb-4 ml-5" style="display: block" @click="change(product.name)">{{product.name}}</button>
                                     </h4>
                                     <h5>需求數量：<span style="color: crimson; font-size: 20px;">{{product.number}}</span></h5>
                                     <h4 class="mt-3" style="color: coral;">需求原因 :</h4>
@@ -95,6 +97,7 @@
         methods:{
             change(name){
                 this.$router.push(`/products/${name}`)
+                
             }
         }
     }

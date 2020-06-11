@@ -36,12 +36,13 @@
                             <td>{{product.note}}</td>
                         </tr>
                         <tr>
+                           <button type="submit" class="btn btn-warning mt-4 mb-4 ml-5" style="display: block" @click="change(product.name)">確認捐贈</button>
                            
-                           <a href="" @click="change(product.name)">前往捐贈</a>
                         </tr>
 
                     </table>
                 </div>
+                
             </div>
         </div>
         <div class="footer">
@@ -82,12 +83,13 @@
     } from '../db'
     const fstore = db.firestore()
     export default {
+        
         data() {
             let id = this.$route.params.id
             return {
                 products: [],
-                id
-            }
+                id,
+                 }
         },
         firestore() {
             let products = fstore.collection('Supplies').where("name", "==", this.id)
@@ -97,7 +99,9 @@
         },
         methods:{
             change(name){
+                
                 this.$router.push(`/confirm/${name}`)
+                
             }
         }
 

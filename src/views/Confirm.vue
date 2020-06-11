@@ -8,10 +8,7 @@
                     <div class="mt-3 mx-auto">確認捐贈</div>
                     
                 </div>
-                <div class="form-group px-3">
-                    <label for="inputInformation" class="mb-2">個人資訊確認</label>
-                </div>
-                 <div class="row" style="text-align:left;line-height:70px;" v-for="(user, idx) in users" :key="idx" >
+                <div class="row" style="text-align:left;line-height:70px;" v-for="(user, idx) in users" :key="idx" >
                 <div class="col-3 mt-5" ></div>
                 <div class="col-3"> <div class="name"><img src="../assets/name.png" style="width:18px; height: 18px ;" class="mr-2">姓名</div> </div>
                 <div class="col-6">{{user.name}}</div>
@@ -21,26 +18,31 @@
                 <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="address"><img src="../assets/address.png" style="width:18px; height: 18px ;" class="mr-2"><span >地址</span></div> </div>
                 <div class="col-6">{{user.address}}</div>
-                 <div class="col-3" style="margin-bottom:10px;"></div>
+                <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="phone"><img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2"><span >手機</span></div> </div>
                 <div class="col-6">{{user.phone}}</div>
-                 
+                <div class="col-3" style="margin-bottom:10px;"></div>
+                
              
             </div>
+        
             <div class="form-group px-3">
-                    <label for="inputInformation" class="mb-2">個人資訊確認</label>
+                    <label for="inputInformation" class="mb-2">物資資訊確認</label>
                 </div>
                  <div class="row" style="text-align:left;line-height:70px;" v-for="(product, idx) in products" :key="idx" >
                 <div class="col-3 mt-5" ></div>
                 <div class="col-3"> <div class="name"><img src="" style="width:18px; height: 18px ;" class="mr-2">物資名稱</div> </div>
                 <div class="col-6">{{product.name}}</div>
+                <div class="col-3 mt-5" ></div>
+                <div class="col-3"> <div class="name"><img src="" style="width:18px; height: 18px ;" class="mr-2">物資數量</div> </div>
+                <div class="col-6">{{product.number}}</div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="email"><img src="" style="width:18px; height: 18px ;" class="mr-2"><span >類別</span></div> </div>
                 <div class="col-6">{{product.cate}}</div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="address"><img src="" style="width:18px; height: 18px ;" class="mr-2"><span >狀態</span></div> </div>
                 <div class="col-6">{{product.state}}</div>
-                 <div class="col-3" style="margin-bottom:10px;"></div>
+                <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="phone"><img src="" style="width:18px; height: 18px ;" class="mr-2"><span >需求目的</span></div> </div>
                 <div class="col-6">{{product.purpose}}</div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
@@ -49,18 +51,18 @@
                  
                  <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="phone"><img src="" style="width:18px; height: 18px ;" class="mr-2"><span >合作單位</span></div> </div>
-                <div class="col-6">{{product.unit}}</div>
+                <div class="col-6" >{{product.unit}}</div>
                  
                  
              
             </div>
-
-
-                
-
                 <div class="form-group px-3">
                     <label for="inputAmount" class="mb-2">捐贈數量</label>
-                    <input type="text" class="form-control mx-auto" style="width:700px">
+                    <textarea class="form-control" cols="30" rows="5" v-model="number"></textarea>
+                </div>
+                <div class="form-group px-3">
+                    <label for="inputAmount" class="mb-2">時間</label>
+                    <textarea class="form-control" cols="30" rows="5" v-model="time"></textarea>
                 </div>
                 
 
@@ -82,7 +84,7 @@
                             <option value="4">聯絡公益單位取貨</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-danger mx-auto mb-3" style="display: block">確認送出</button>
+                    <button type="submit" class="btn btn-danger mx-auto mb-3" style="display: block" @click="enter()">確認送出</button>
 
               
                 
@@ -104,23 +106,48 @@
     export default {
         data() {
             let id = this.$route.params.id;
-            let currentUser = db.auth().currentUser;
+             let currentUser = db.auth().currentUser;
             let uid = ( currentUser !== undefined) ? currentUser.uid : '';
+            
             return {   
                 products: [],
                 id,
-                users:[],
-                uid
+                 users:[],
+                 uid,
+                unit:'',
+                time:'',
+                supplies:'',
+                name:'',
+                number:''
+                
             }
                      
         },
         firestore() {
             let products = fstore.collection('Supplies').where("name", "==", this.id);
-            let users = fstore.collection('Customer').where("uid", "==", this.uid);
+            let users = fstore.collection('Customer').where('uid', '==', this.uid);
         
             return {
                 products,
-                users 
+                users,
+            }
+        },
+        methods:{
+            enter(){
+                let num = parseInt(this.number, 10)
+                
+
+                const fdb = db.firestore()
+                fdb.collection('History').doc().set({
+                    name: 'edf',
+                    cate: 'fsehf',
+                    time: this.time,
+                    unit: 'shdfjhsdfj',
+                    number: num,
+                }).then(()=>{
+                    alert("捐贈成功!!")
+                    this.$router.replace({name: "Home"})
+                })
             }
         }
 
