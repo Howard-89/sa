@@ -65,9 +65,10 @@ Vue.use(VueRouter)
     meta: {requiresAuth: true}
   },
   {
-    path: '/confirm/:id',
+    path: '/confirm/:unit/:name/:amount/:cate',
     name: 'Confirm',
     component:Confirm,
+    meta: {requiresAuth: true}
     
   }
 ]

@@ -36,7 +36,7 @@
                             <td>{{product.note}}</td>
                         </tr>
                         <tr>
-                           <button type="submit" class="btn btn-warning mt-4 mb-4 ml-5" style="display: block" @click="change(product.name)">確認捐贈</button>
+                           <button type="submit" class="btn btn-warning mt-4 mb-4 ml-5" style="display: block" @click="change(product.unit ,product.name, product.number, product.cate)">確認捐贈</button>
                            
                         </tr>
 
@@ -98,9 +98,9 @@
             }
         },
         methods:{
-            change(name){
+            change(unit, name, amount, cate){
                 
-                this.$router.push(`/confirm/${name}`)
+                this.$router.push(`/confirm/${unit}/${name}/${amount}/${cate}`)
                 
             }
         }

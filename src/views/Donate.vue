@@ -89,7 +89,7 @@
             }
         },
         firestore(){
-            let products = fstore.collection('Supplies')
+            let products = fstore.collection('Supplies').where('number', '>', 0)
             return{
                 products
             }
