@@ -15,7 +15,7 @@
                 <div class="col-6 mb-5" >
                     <table v-for="(history, idx) in historys" :key="idx">
                         <tr>
-                            <td> {{history.name}}於{{history.time}}捐贈{{history.supplies}}*{{history.number}}給{{history.unit}}</td>
+                            <td> {{history.name}}於{{history.date}}捐贈{{history.pname}}*{{history.gamount}}給{{history.unit}}</td>
                         </tr>
                     </table>
                   
