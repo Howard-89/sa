@@ -52,15 +52,17 @@ import {
         db
     } from '../db'
     const fstore = db.firestore()
+    let uid = db.auth().currentUser.uid;
     export default {
         data() {
             return {
                 historys: [],
+                uid,
                 
             }
         },
         firestore() {
-            let historys = fstore.collection('History')
+            let historys = fstore.collection('History').where('uid','==',this.uid)
             return {
                 historys
             }

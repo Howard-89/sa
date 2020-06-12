@@ -21,14 +21,7 @@
                     </div>
                   </div>
                  
-                  <div class="form-group " style="font-size: 13px;">
-                    <div class="form-check text-center mt-5">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label " for="gridCheck">
-                        我已閱讀完畢並接受<span style="font-weight:bold;"> 服務條款</span> 及 <span style="font-weight:bold;"> 隱私權政策</span> 
-                      </label> 
-                    </div>
-                  </div>
+                  
                   <button  class="btn btn-danger mx-auto mt-4" style="display: block" @click="login">登入</button>
                   <h3 class="text-center mt-4 mb-4" style="font-size: 13px;">還不是會員？請快點<router-link style="color: red;" to="/signin">註冊</router-link>吧！</h3>
                 </div>

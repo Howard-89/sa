@@ -48,7 +48,6 @@
           <div class="col-3" style="margin-bottom:10px;"></div>
           <div class="col-3">
             <div class="phone">
-              <img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2" />
               <span>物資名稱</span>
             </div>
           </div>
@@ -57,7 +56,6 @@
 
           <div class="col-3">
             <div class="phone">
-              <img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2" />
               <span>物資數量</span>
             </div>
           </div>
@@ -66,7 +64,6 @@
 
           <div class="col-3">
             <div class="phone">
-              <img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2" />
               <span>合作單位</span>
             </div>
           </div>
@@ -75,7 +72,6 @@
 
           <div class="col-3">
             <div class="phone">
-              <img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2" />
               <span>捐贈數量</span>
             </div>
           </div>
@@ -86,7 +82,6 @@
 
           <div class="col-3">
             <div class="phone">
-              <img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2" />
               <span>捐贈方式</span>
             </div>
           </div>
@@ -98,14 +93,10 @@
               <option value="聯絡公益單位取貨">聯絡公益單位取貨</option>
             </select>
           </div>
-          <div class="col-3" style="margin-bottom:10px;"></div>
-          <button
-            type="submit"
-            class="btn btn-danger mx-auto mb-3"
-            style="display: block"
-            @click="enter(user.name)"
-          >確認送出</button>
+          <div class="col--1" style="margin-bottom:10px;"></div>
+          <button type="submit" class="btn btn-danger mx-auto mb-3" style="display: block" @click="enter(user.name)">確認送出</button>
         </div>
+        
       </div>
     </div>
   </div>
