@@ -14,7 +14,14 @@
 
                     <div class="form-group col-md-6">
                         <label class="mb-2">類別</label>
-                        <input type="text" class="form-control" v-model="cate">
+                        <select class="form-control" v-model="cate">
+                        <option value="家電機器">家電機器</option>
+                        <option value="生活用品">生活用品</option>
+                        <option value="服飾配件">服飾配件</option>
+                        <option value="居家擺設">居家擺設</option>
+                        <option value="毛小孩用品">毛小孩用品</option>
+                        <option value="文具用品">文具用品</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="mb-2">品名</label>

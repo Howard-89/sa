@@ -24,7 +24,7 @@
                 <div class="col-6">{{user.phone}}</div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改密碼</span></div> </div>
-                <div class="col-6">  <button  class="btn btn-primary mt-2" style="display: block">送出審核信</button></div>
+                <div class="col-6">  <button  class="btn btn-primary mt-2" style="display: block">修改密碼</button></div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="key"><img src="../assets/account.png" style="width:18px; height: 18px ;" class="mr-2"><span >審核帳號</span></div> </div>
                 <div class="col-6">
