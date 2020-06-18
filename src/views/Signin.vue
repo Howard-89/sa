@@ -106,10 +106,13 @@ export default {
                             password: this.pw,
                             address: this.address,
                             audit: false,
-                            uid: user.uid
+                            uid: user.uid,
+                            unit:'',
+                            uaddress:'',
+                            uphone:''
                         }).then(()=>{
                             alert("註冊成功!!")
-                            this.$router.replace({name: "Login"})
+                            this.$router.replace({name: "Home"})
                         })
                     })
             }

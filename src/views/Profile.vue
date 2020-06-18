@@ -23,9 +23,18 @@
                 <div class="col-3"> <div class="phone"><img src="../assets/phone.png" style="width:18px; height: 18px ;" class="mr-2"><span >手機</span></div> </div>
                 <div class="col-6">{{user.phone}}</div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
-                <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改密碼</span></div> </div>
-                <div class="col-6">  <button  class="btn btn-primary mt-2" style="display: block">送出審核信</button></div>
+                <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >審核單位</span></div> </div>
+                <div class="col-4 ">  <router-link to="/Check"  class="btn btn-primary mt-2" style="display: block; width:100px">審核</router-link></div>
                  <div class="col-3" style="margin-bottom:10px;"></div>
+
+                <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改資料</span></div> </div>
+                <div class="col-4 ">  <router-link to="/Modify"  class="btn btn-primary mt-2" style="display: block; width:100px">修改資料</router-link></div>
+                <div class="col-3" style="margin-bottom:10px;"></div>
+
+                 <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改密碼</span></div> </div>
+                <div class="col-4 ">  <button @click="reset(user.email)" class="btn btn-primary mt-2" style="display: block ; width:100px">修改密碼</button></div>
+                 <div class="col-3" style="margin-bottom:10px;"></div>
+
                 <div class="col-3"> <div class="key"><img src="../assets/account.png" style="width:18px; height: 18px ;" class="mr-2"><span >審核帳號</span></div> </div>
                 <div class="col-6">
                  <img src="../assets/check.png" style="width:18px; height: 18px ;">
@@ -53,21 +62,30 @@ import { db } from '../db'
 const fstore = db.firestore()
 export default {
     data(){
-    let currentUser = db.auth().currentUser;
-    let uid = ( currentUser !== undefined) ? currentUser.uid : '';
-    return{
-      users:[],
-      uid
-    }
-  },
-  firestore() {
+        let currentUser = db.auth().currentUser;
+        let uid = ( currentUser !== undefined) ? currentUser.uid : '';
+        return{
+        users:[],
+        uid
+        }
+    },
+    firestore() {
         let users = fstore.collection('Customer').where('uid', '==', this.uid);
         return{
-           users 
+        users 
         }
-        
-         
+    },
+    methods:{
+        reset(email){
+            db
+                .auth()
+                .sendPasswordResetEmail(email)
+                .then(()=>{
+                    alert("請前往信箱進行密碼重設!!")
+                })
+        }
     }
+    
 }
 </script>
 

@@ -28,11 +28,12 @@
                                 class="mr-2">捐款紀錄</div>
                     </div>
                     <div class="col-6 mb-5">
-                        曾於2020.10.25捐款一萬元整給關愛之家
-                        <br>
-                        曾於2020.10.25捐款一萬元整給關愛之家
-                        <br>
-                        曾於2020.10.25捐款一萬元整給關愛之家
+                        <table v-for="(donate, idx) in donates" :key="idx">
+                            <tr>
+                                <td> {{donate.Name}}於{{donate.Time.toDate() | formatedDate}}捐贈{{donate.Money}}給{{donate.Donname}}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -46,8 +47,10 @@
     export default {
         data() {
             let uid = db.auth().currentUser.uid;
+
             return {
                 historys: [],
+                donates: [],
                 uid,
             }
         },
@@ -58,10 +61,13 @@
         },
         firestore() {
             let historys = fstore.collection('History').where('uid', '==', this.uid)
+            let donates = fstore.collection('donate').where('uid','==',this.uid)
             return {
-                historys
+                historys,
+                donates,
             }
         }
+        
 
     }
 </script>

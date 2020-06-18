@@ -14,7 +14,14 @@
 
                     <div class="form-group col-md-6">
                         <label class="mb-2">類別</label>
-                        <input type="text" class="form-control" v-model="cate">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" v-model="cate">
+                            <option value="1">家電機器</option>
+                            <option value="2">生活用品</option>
+                            <option value="3">服飾配件</option>
+                            <option value="4">居家擺設</option>
+                            <option value="5">毛小孩用品</option>
+                            <option value="6">文具用品</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="mb-2">品名</label>
@@ -108,7 +115,7 @@
                     this.$router.replace({name: "Donate"})
                 })
             }
-        }
+        },
 
     }
 </script>
