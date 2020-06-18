@@ -11,6 +11,8 @@ import Products from '../views/Products.vue'
 import Profile from '../views/Profile.vue'
 import History from '../views/History.vue'
 import Confirm from '../views/Confirm.vue'
+import Check from '../views/Check.vue'
+import Modify from '../views/Modify.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -69,6 +71,16 @@ Vue.use(VueRouter)
     name: 'Confirm',
     component:Confirm,
     meta: {requiresAuth: true}
+  },
+  {
+    path: '/check',
+    name: 'Check',
+    component:Check,
+  },
+  {
+    path: '/modify',
+    name: 'Modify',
+    component:Modify,
   }
 ]
 

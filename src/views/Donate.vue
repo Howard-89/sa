@@ -87,11 +87,9 @@ export default {
     };
   },
   firestore() {
-    let products1 = fstore.collection('Supplies').where('number', '>', 0)
     let products = fstore.collection("Supplies").where("cate", "==", this.cate);
     let supplies = fstore.collection("Supplies");
     return {
-        products1,
         products,
         supplies
     };
