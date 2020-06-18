@@ -44,15 +44,7 @@
                     <label class="mb-2">備註</label>
                     <textarea class="form-control" cols="30" rows="5" v-model="note"></textarea>
                 </div>
-                <div class="form-group" style="font-size: 13px;">
-                    <div class="form-check text-center">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            我已閱讀完畢並接受<span style="font-weight:bold;"> 服務條款</span> 及 <span style="font-weight:bold;">
-                                隱私權政策</span>
-                        </label>
-                    </div>
-                </div>
+               
                 <button class="btn btn-danger mx-auto mb-3" style="display: block" @click="enter">確認送出</button>
             </div>
         </div>

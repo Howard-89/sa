@@ -13,18 +13,17 @@
             <a class="list-group-item" @click="handleCate" aria-label="6">文具用品</a>
           </div>
         </div>
-        <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
           <div class="row my-4">
             <div class="col-lg-4 col-md-6 mb-4" v-for="(product, idx) in products" :key="idx">
               <div class="card h-100">
                 <div class="card-body">
-                  <h4 class="card-title">
+                  <h4 class="card-title" >
                     <button
                       type="submit"
-                      class="btn btn-warning mt-4 mb-4 ml-5"
-                      style="display: block"
+                      class="btn btn-warning mt-4 mb-4 ml-5  mx-auto"
+                      style="display: block ; width:150px;"
                       @click="change(product.name)"
                     >{{product.name}}</button>
                   </h4>
@@ -40,12 +39,8 @@
               </div>
             </div>
           </div>
-
-          <!-- /.row -->
         </div>
-        <!-- /.col-lg-9 -->
       </div>
-      <!-- /.row -->
     </div>
     <div class="footer">
  <div class="row" >

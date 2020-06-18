@@ -28,21 +28,15 @@
                  <div class="col-3" style="margin-bottom:10px;"></div>
 
                 <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改資料</span></div> </div>
-                <div class="col-4 ">  <router-link to="/Modify"  class="btn btn-primary mt-2" style="display: block; width:100px">修改資料</router-link></div>
+                <div class="col-4 ">  <router-link to="/Modify"  class="btn btn-success mt-2" style="display: block; width:100px">修改資料</router-link></div>
                 <div class="col-3" style="margin-bottom:10px;"></div>
 
                  <div class="col-3"> <div class="key"><img src="../assets/key.png" style="width:18px; height: 18px ;" class="mr-2"><span >修改密碼</span></div> </div>
-                <div class="col-4 ">  <button @click="reset(user.email)" class="btn btn-primary mt-2" style="display: block ; width:100px">修改密碼</button></div>
-                 <div class="col-3" style="margin-bottom:10px;"></div>
-
-                <div class="col-3"> <div class="key"><img src="../assets/account.png" style="width:18px; height: 18px ;" class="mr-2"><span >審核帳號</span></div> </div>
-                <div class="col-6">
-                 <img src="../assets/check.png" style="width:18px; height: 18px ;">
-                 <img src="../assets/cross.png" style="width:18px; height: 18px ;">
-                </div>
-                 <div class="col-3" style="margin-bottom:10px;"></div>
+                <div class="col-4 ">  <button @click="reset(user.email)" class="btn btn-success mt-2" style="display: block ; width:100px">修改密碼</button></div>
+                <div class="col-3" style="margin-bottom:10px;"></div>
                 <div class="col-3"> <div class="key"><img src="../assets/history.png" style="width:18px; height: 18px ;" class="mr-2"><span >歷史紀錄</span></div> </div>
                 <div class="col-6 mb-5">  <router-link to="/History"  class="btn btn-danger mt-2" style="display: block ; width:100px">查看</router-link></div>
+               
              
             </div>
                
@@ -53,6 +47,29 @@
              
 
             </div>
+        </div>
+            <div class="footer">
+             <div class="row" >
+            <div class="col-sm-4 mb-4" style="color:white">
+                <div class="mt-5 mb-4 ml-5">友站連結：</div>
+                <div class="mb-4  ml-5"><a href="http://igoods.tw/Index/Index.aspx">igoods愛物資</a></div>
+               <div class="mb-4  ml-5"> <a href="https://www.eden.org.tw/">伊甸社福基金會</a></div>
+               <div class="mb-4  ml-5"><a href="http://www.fhl.org.tw/">信望愛智譨發展中心</a></div>
+            </div>
+            <div class="col-sm-4 mb-4">
+                 <h3 style="color:white;" class="mt-5 mb-3 ml-4">愛心分享 :</h3>
+                 <div class="mb-2  ml-4"><router-link class="nav-link" to="/donate" @click.native="closeMenu()">我要捐贈</router-link></div>
+                 <div class="mb-2  ml-4">  <router-link class="nav-link" to="/public" @click.native="closeMenu()">公益單位合作</router-link></div>
+                  <div class="mb-4  ml-4">  <router-link class="nav-link" to="/donation" @click.native="closeMenu()">我要捐款</router-link></div>
+            </div>
+            <div class="col-sm-4 mb-4" style="color:white">
+                <div class="mt-5 mb-4 ml-5">服務專線：(02)-29977909</div>
+                <div class="mb-4 ml-5">地址：台北市大安區民正路120號</div>
+               <div class="mb-4 ml-5">信箱：ilovedonation@gmail.com</div>
+               <div class="mb-4 ml-5">營業時間：週一～週五 上午9:00~下午5:30</div>
+            </div>
+        </div>
+
         </div>
     </div>
 </template>

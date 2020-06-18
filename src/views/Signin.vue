@@ -34,20 +34,14 @@
                     <label class="mb-2">再次輸入密碼</label>
                     <input type="password" class="form-control"  placeholder="請輸入至少6個字元" v-model="repw">
                     </div>
-                    <div class="form-group" style="font-size: 13px;">
-                      <div class="form-check text-center">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                          我已閱讀完畢並接受<span style="font-weight:bold;"> 服務條款</span> 及 <span style="font-weight:bold;"> 隱私權政策</span> 
-                        </label> 
-                      </div>
-                    </div>
+                  
                     <button class="btn btn-danger mx-auto" style="display: block" @click="signin">註冊</button>
                     <h3 class="text-center mt-2 mb-3" style="font-size: 13px;">已經是會員？請直接<router-link style="color: red;" to="/login">登入</router-link>吧！</h3>
                   </div>
               </div>
           </div>
       </div>
+      
       <div class="footer">
          <div class="row" >
             <div class="col-sm-4 mb-4" style="color:white">
