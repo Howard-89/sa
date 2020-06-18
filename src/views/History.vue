@@ -17,7 +17,7 @@
                     <div class="col-6 mb-5">
                         <table v-for="(history, idx) in historys" :key="idx">
                             <tr>
-                                <td> {{history.name}}於{{history.date.toDate() | formatedDate}}捐贈{{history.pname}}*{{history.gamount}}給{{history.unit}}
+                                <td> {{history.name}}於{{history.date}}捐贈{{history.pname}}*{{history.gamount}}給{{history.unit}}
                                 </td>
                             </tr>
                         </table>
@@ -30,7 +30,7 @@
                     <div class="col-6 mb-5">
                         <table v-for="(donate, idx) in donates" :key="idx">
                             <tr>
-                                <td> {{donate.Name}}於{{donate.Time.toDate() | formatedDate}}捐贈{{donate.Money}}給{{donate.Donname}}
+                                <td> {{donate.Name}}於{{donate.Time}}捐贈{{donate.Money}}元給{{donate.DonName}}
                                 </td>
                             </tr>
                         </table>
@@ -61,13 +61,12 @@
         },
         firestore() {
             let historys = fstore.collection('History').where('uid', '==', this.uid)
-            let donates = fstore.collection('donate').where('uid','==',this.uid)
+            let donates = fstore.collection('donate').where('Uid','==',this.uid)
             return {
                 historys,
                 donates,
             }
         }
-        
 
     }
 </script>

@@ -155,7 +155,7 @@ export default {
           unit: this.unit,
           gamount: num,
           way: this.way,
-          date: new Date()
+          date: new Date(Date.now()).toLocaleString(),
         })
         .then(() => {
           const ProductRef = fstore.collection("Supplies");
